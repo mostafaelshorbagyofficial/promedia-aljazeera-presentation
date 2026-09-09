@@ -1,0 +1,168 @@
+﻿/* ===================================================
+   PROMEDIA × AL JAZEERA — CINEMATIC PRESENTATION STYLES
+   =================================================== */
+
+:root {
+  --obsidian: #07080B;
+  --graphite: #111318;
+  --graphite-light: #1A1D24;
+  --gold: #C8A97E;
+  --gold-light: #DFCAAB;
+  --gold-dark: #9A7B4F;
+  --bone: #F4F4F6;
+  --bone-muted: #8E929E;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(200, 169, 126, 0.25);
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-arabic: 'Amiri', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: var(--bone);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 169, 126, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Typography & Vignette Helpers */
+.font-serif { font-family: var(--font-serif); }
+.font-arabic { font-family: var(--font-arabic); }
+.font-mono { font-family: ui-monospace, monospace; }
+
+.bg-radial-vignette {
+  background: radial-gradient(circle at center, transparent 40%, rgba(7, 8, 11, 0.95) 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFFFFF 0%, #DFCAAB 50%, #C8A97E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Luxury Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--gold);
+  color: var(--obsidian);
+  padding: 0.85rem 1.75rem;
+  border-radius: 9999px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px -5px rgba(200, 169, 126, 0.35);
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(200, 169, 126, 0.5);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--bone);
+  border: 1px solid var(--border-subtle);
+  padding: 0.85rem 1.75rem;
+  border-radius: 9999px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(200, 169, 126, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Cards & Interactions */
+.service-card, .equipment-card, .client-card, .portfolio-item {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover, .equipment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.8);
+}
+
+/* Lightbox Modal */
+#lightboxModal.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Navigation Dots */
+.nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.nav-dot:hover {
+  background: var(--gold-light);
+  transform: scale(1.4);
+}
+
+.nav-dot.active {
+  background: var(--gold);
+  height: 20px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(200, 169, 126, 0.6);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
